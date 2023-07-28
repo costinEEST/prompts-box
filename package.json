@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "browser": "open http://0.0.0.0:3009",
     "build": "next build",
+    "clean": "rm -rf .next node_modules",
+    "dev": "next dev -p 3009 & $npm_execpath browser",
+    "kill": "pnpm dlx kill-port 3009",
     "start": "next start",
     "lint": "next lint"
   },
