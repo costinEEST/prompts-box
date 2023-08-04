@@ -1,5 +1,5 @@
 {
-  "name": "prompts-box",
+  "name": "promptopia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,20 +9,33 @@
     "dev": "next dev -p 3009 & $npm_execpath browser",
     "kill": "pnpm dlx kill-port 3009",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "turso:create": "turso db create promptopia",
+    "turso:delete": "turso db destroy promptopia",
+    "turso:load": "turso db shell promptopia < schema.sql",
+    "turso:url": "turso db show promptopia --url",
+    "turso:token": "turso db tokens create promptopia",
+    "turso:shell": "turso db shell promptopia"
   },
   "dependencies": {
-    "@types/node": "20.4.5",
-    "@types/react": "18.2.17",
-    "@types/react-dom": "18.2.7",
+    "@libsql/client": "^0.3.1",
+    "@lucia-auth/adapter-sqlite": "^2.0.0",
+    "@lucia-auth/oauth": "^2.0.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "lucia": "^2.0.0",
     "next": "13.4.12",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230801.0",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7"
   }
 }

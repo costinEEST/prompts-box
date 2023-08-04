@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import Nav from "../components/Nav";
 
 import "@styles/global.css";
 
@@ -18,7 +19,10 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <div className="gradient" />
         </div>
 
-        <main className="app">{children}</main>
+        <main className="app">
+          <Nav />
+          {children}
+        </main>
       </body>
     </html>
   );
